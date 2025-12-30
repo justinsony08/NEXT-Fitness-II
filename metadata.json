@@ -1,0 +1,7 @@
+{
+  "name": "NEXT Fitness II - Kecskemét",
+  "description": "A professional, modern, and high-energy gym website for NEXT Fitness II in Kecskemét, featuring an AI-powered fitness assistant, interactive schedules, and membership management.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
