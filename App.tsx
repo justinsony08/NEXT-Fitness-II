@@ -1,18 +1,18 @@
 
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Schedule from './components/Schedule';
-import Membership from './components/Membership';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import AIAssistant from './components/AIAssistant';
+import Header from './components/Header.tsx';
+import Hero from './components/Hero.tsx';
+import About from './components/About.tsx';
+import Services from './components/Services.tsx';
+import Schedule from './components/Schedule.tsx';
+import Membership from './components/Membership.tsx';
+import Contact from './components/Contact.tsx';
+import Footer from './components/Footer.tsx';
+import AIAssistant from './components/AIAssistant.tsx';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-black">
       <Header />
       <main className="flex-grow">
         <Hero />

@@ -1,8 +1,10 @@
 
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook } from 'lucide-react';
+import { MapPin, Phone, Clock, Instagram, Facebook, ExternalLink } from 'lucide-react';
 
 const Contact: React.FC = () => {
+  const mapLink = "https://maps.app.goo.gl/ov3iEhTjR11nEzwJ6";
+
   return (
     <section id="contact" className="py-24 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,6 +22,14 @@ const Contact: React.FC = () => {
                 <div>
                   <h3 className="font-black uppercase text-sm text-gray-400 tracking-widest mb-1">Location</h3>
                   <p className="text-lg font-bold">Rezgő u. 1, 6000 Kecskemét, Hungary</p>
+                  <a 
+                    href={mapLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center gap-2 text-lime-400 text-sm font-bold uppercase mt-2 hover:underline"
+                  >
+                    View on Google Maps <ExternalLink size={14} />
+                  </a>
                 </div>
               </div>
 
@@ -56,7 +66,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="space-y-8">
-            <div className="rounded-3xl overflow-hidden h-[300px] border border-white/10 grayscale hover:grayscale-0 transition-all duration-700">
+            <div className="rounded-3xl overflow-hidden h-[300px] border border-white/10 grayscale hover:grayscale-0 transition-all duration-700 relative">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2724.897818968951!2d19.673859676839382!3d46.92440813491415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4743da3e8c18335f%3A0x6b49704771501705!2sNEXT%20Fitness%20II.!5e0!3m2!1sen!2shu!4v1716200000000!5m2!1sen!2shu" 
                 width="100%" 
@@ -66,25 +76,36 @@ const Contact: React.FC = () => {
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
+              <a 
+                href={mapLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-4 right-4 bg-lime-400 text-black px-4 py-2 rounded-lg font-bold text-xs uppercase shadow-lg hover:bg-lime-300 transition-colors flex items-center gap-2"
+              >
+                Open Map <ExternalLink size={14} />
+              </a>
             </div>
 
-            <form className="grid grid-cols-2 gap-4">
+            <form className="grid grid-cols-2 gap-4" onSubmit={(e) => e.preventDefault()}>
               <input 
                 type="text" 
                 placeholder="Name" 
                 className="col-span-2 md:col-span-1 bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-lime-400 text-white"
+                required
               />
               <input 
                 type="email" 
                 placeholder="Email" 
                 className="col-span-2 md:col-span-1 bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-lime-400 text-white"
+                required
               />
               <textarea 
                 placeholder="How can we help?" 
                 rows={4}
                 className="col-span-2 bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-lime-400 text-white"
+                required
               ></textarea>
-              <button className="col-span-2 bg-lime-400 text-black py-4 rounded-xl font-black uppercase tracking-widest hover:bg-lime-300 transition-all">
+              <button type="submit" className="col-span-2 bg-lime-400 text-black py-4 rounded-xl font-black uppercase tracking-widest hover:bg-lime-300 transition-all">
                 Send Message
               </button>
             </form>
